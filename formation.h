@@ -16,6 +16,9 @@ public:
     int get_CODE();
     bool ajouter();
     QSqlQueryModel * afficher();
+    QSqlQueryModel * afficher2();
+    QSqlQueryModel * afficher3();
+    QSqlQueryModel * afficher4();
     bool supprimer(int);
     bool modifier(int,QString,QString,QString);
     QSqlQueryModel * rechercher(const QString);

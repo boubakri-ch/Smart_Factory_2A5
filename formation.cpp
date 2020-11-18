@@ -51,6 +51,51 @@ model->setHeaderData(3, Qt::Horizontal, QObject::tr("Departement"));
 
 }
 
+QSqlQueryModel * FORMATION::afficher2()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from formation ORDER BY Nom");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODE"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom "));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("Domaine"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("Departement"));
+
+
+
+    return model;
+
+}
+QSqlQueryModel * FORMATION::afficher3()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from formation ORDER BY Domaine");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODE"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom "));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("Domaine"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("Departement"));
+
+
+
+    return model;
+
+}
+QSqlQueryModel * FORMATION::afficher4()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from formation ORDER BY Departement");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODE"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom "));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("Domaine"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("Departement"));
+
+
+
+    return model;
+
+}
+
+
+
 bool FORMATION::supprimer(int CODE)
 {
 QSqlQuery query;

@@ -15,6 +15,8 @@ public:
     int get_CIN();
     bool ajouter();
     QSqlQueryModel * afficher();
+     QSqlQueryModel * afficher2();
+     QSqlQueryModel * afficher3();
     bool supprimer(int);
     bool modifier(int,QString,QString);
     QSqlQueryModel * rechercher(const QString);

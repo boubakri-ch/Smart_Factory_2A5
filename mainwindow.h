@@ -26,6 +26,15 @@ private slots:
     void on_pushButton_supp_teur_clicked();
     void on_rechercher_3_textChanged(const QString &ch);
     void on_rechercher_2_textChanged(const QString &ch);
+    void on_radioButton_nom_clicked();
+    void on_radioButton_cin_clicked();
+    void on_radioButton_pre_clicked();
+    void on_radioButton_CODE_clicked();
+    void on_radioButton_NOM_clicked();
+    void on_radioButton_DOMAINE_clicked();
+    void on_radioButton_DEP_clicked();
+
+
 private:
     Ui::MainWindow *ui;
     FORMATION tmpFORMATION;

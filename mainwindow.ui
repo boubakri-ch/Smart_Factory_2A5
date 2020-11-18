@@ -121,7 +121,7 @@ color: rgb(255, 255, 255);
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>50</y>
+       <y>60</y>
        <width>531</width>
        <height>321</height>
       </rect>
@@ -132,7 +132,7 @@ color:rgb(0, 0, 0)
 }</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">
@@ -141,9 +141,9 @@ color:rgb(0, 0, 0)
       <widget class="QTabWidget" name="tabWidget_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>10</y>
-         <width>431</width>
+         <width>531</width>
          <height>251</height>
         </rect>
        </property>
@@ -506,6 +506,88 @@ color:rgb(255, 255, 255);
          </property>
         </widget>
        </widget>
+       <widget class="QWidget" name="tab_17">
+        <attribute name="title">
+         <string>Afficher</string>
+        </attribute>
+        <widget class="QTableView" name="tableView_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>421</width>
+           <height>221</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_CODE">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>30</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>CODE</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_NOM">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>60</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>NOM</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_DOMAINE">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>90</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>DOMAINE</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_DEP">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>120</y>
+           <width>101</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>DEPARTEMENTS</string>
+         </property>
+        </widget>
+       </widget>
        <widget class="QWidget" name="tab_5">
         <attribute name="title">
          <string>Supprimer</string>
@@ -573,24 +655,6 @@ background-color: rgb(255,165,0,0.5);
          </property>
         </widget>
        </widget>
-       <widget class="QWidget" name="tab_17">
-        <attribute name="title">
-         <string>Afficher</string>
-        </attribute>
-        <widget class="QTableView" name="tableView_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>421</width>
-           <height>221</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-        </widget>
-       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_10">
@@ -600,7 +664,7 @@ background-color: rgb(255,165,0,0.5);
       <widget class="QTabWidget" name="tabWidget_3">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>0</x>
          <y>10</y>
          <width>431</width>
          <height>251</height>
@@ -612,7 +676,7 @@ color:rgb(0, 0, 0)
 }</string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab_6">
         <attribute name="title">
@@ -890,6 +954,24 @@ background-color: rgb(255,165,0,0.5);
          </property>
         </widget>
        </widget>
+       <widget class="QWidget" name="tab_18">
+        <attribute name="title">
+         <string>afficher</string>
+        </attribute>
+        <widget class="QTableView" name="tableView">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>421</width>
+           <height>221</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </widget>
        <widget class="QWidget" name="tab_8">
         <attribute name="title">
          <string>Supprimer</string>
@@ -960,24 +1042,54 @@ background-color: rgb(255,165,0,0.5);
          </property>
         </widget>
        </widget>
-       <widget class="QWidget" name="tab_18">
-        <attribute name="title">
-         <string>afficher</string>
-        </attribute>
-        <widget class="QTableView" name="tableView">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>421</width>
-           <height>221</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-        </widget>
-       </widget>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_pre">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>160</y>
+         <width>83</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>PRENOM</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_cin">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>80</y>
+         <width>83</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>CIN</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_nom">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>120</y>
+         <width>83</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>NOM</string>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_2">

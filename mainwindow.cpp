@@ -9,7 +9,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableView_2->setModel(tmpFORMATION.afficher());
+     ui->tableView_2->setModel(tmpFORMATION.afficher2());
+      ui->tableView_2->setModel(tmpFORMATION.afficher3());
+       ui->tableView_2->setModel(tmpFORMATION.afficher4());
     ui->tableView->setModel(tmpFORMATEUR.afficher());
+    ui->tableView->setModel(tmpFORMATEUR.afficher2());
+    ui->tableView->setModel(tmpFORMATEUR.afficher3());
     ui->tableView_3->setModel(tmpFORMATION.afficher());
     ui->tableView_3->setModel(tmpFORMATION.rechercher(ch));
     ui->tableView_4->setModel(tmpFORMATEUR.afficher());
@@ -148,4 +153,33 @@ void MainWindow::on_rechercher_2_textChanged(const QString &ch)
     else
     this->ui->tableView_4->setModel(g.rechercher(ch));
 
+}
+void MainWindow::on_radioButton_nom_clicked()
+{
+    ui->tableView->setModel(tmpFORMATEUR.afficher2());
+
+}
+void MainWindow::on_radioButton_cin_clicked()
+{
+     ui->tableView->setModel(tmpFORMATEUR.afficher());
+}
+void MainWindow::on_radioButton_pre_clicked()
+{
+    ui->tableView->setModel(tmpFORMATEUR.afficher3());
+}
+void MainWindow::on_radioButton_CODE_clicked()
+{
+       ui->tableView_2->setModel(tmpFORMATION.afficher());
+}
+void MainWindow:: on_radioButton_NOM_clicked()
+{
+     ui->tableView_2->setModel(tmpFORMATION.afficher2());
+}
+void MainWindow:: on_radioButton_DOMAINE_clicked()
+{
+     ui->tableView_2->setModel(tmpFORMATION.afficher3());
+}
+void MainWindow:: on_radioButton_DEP_clicked()
+{
+     ui->tableView_2->setModel(tmpFORMATION.afficher4());
 }

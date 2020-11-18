@@ -45,6 +45,31 @@ model->setHeaderData(5, Qt::Horizontal, QObject::tr("Prenom"));
 
 }
 
+QSqlQueryModel * FORMATEUR::afficher2()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from formateur ORDER BY Nom");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("CIN"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom "));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("Prenom"));
+
+
+    return model;
+
+}
+
+QSqlQueryModel * FORMATEUR::afficher3()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from formateur ORDER BY Prenom");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("CIN"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom "));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("Prenom"));
+
+
+    return model;
+
+}
 bool FORMATEUR::supprimer(int CIN)
 {
 QSqlQuery query;
