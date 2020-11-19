@@ -1,7 +1,7 @@
 #include "connexion.h"
 
 //test tutoriel git
-
+//huigtoyo
 
 Connexion::Connexion()
 {
