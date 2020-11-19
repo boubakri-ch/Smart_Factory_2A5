@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>BackGround.jpg</file>
+        <file>Books.jpg</file>
+        <file>bouton.png</file>
+        <file>button.png</file>
+        <file>click.wav</file>
+        <file>fleche.png</file>
+        <file>icon.png</file>
+        <file>images.jpg</file>
+        <file>images.qrc</file>
+        <file>img.qrc</file>
+        <file>loginImg1.png</file>
+        <file>modifier.png</file>
+        <file>search.png</file>
+        <file>supp.png</file>
+        <file>valid.png</file>
+        <file>1.jpg</file>
+        <file>bg1.png</file>
+        <file>client.png</file>
+        <file>card.png</file>
+        <file>books.png</file>
+        <file>gmail.png</file>
+    </qresource>
+</RCC>

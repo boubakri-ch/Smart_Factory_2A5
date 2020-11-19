@@ -1,9 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <QtMultimedia/qsound.h>
 #include "formation.h"
 #include "formateur.h"
 #include <QMainWindow>
-
+#include <QFileDialog>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -14,6 +15,7 @@ class MainWindow : public QMainWindow
 FORMATION f , *fs;
 FORMATEUR g , *gs;
 QString ch;
+  QSound *sound= new QSound(":/click.wav");
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -33,7 +35,8 @@ private slots:
     void on_radioButton_NOM_clicked();
     void on_radioButton_DOMAINE_clicked();
     void on_radioButton_DEP_clicked();
-
+    void on_pdf_tions_clicked();
+    void on_pdf_teurs_clicked();
 
 private:
     Ui::MainWindow *ui;
