@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
-    <height>449</height>
+    <width>767</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,13 +20,25 @@ color: rgb(255, 255, 255);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>767</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>767</width>
+     <height>473</height>
+    </size>
+   </property>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
       <x>-10</x>
       <y>0</y>
-      <width>611</width>
-      <height>411</height>
+      <width>771</width>
+      <height>501</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -500,9 +512,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>20</y>
-       <width>131</width>
+       <x>290</x>
+       <y>10</y>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -585,10 +597,10 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <widget class="QTabWidget" name="tabWidget">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>60</y>
-       <width>531</width>
-       <height>321</height>
+       <x>70</x>
+       <y>70</y>
+       <width>621</width>
+       <height>341</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -603,7 +615,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         }</string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">
@@ -1714,7 +1726,7 @@ background: white;
 }</string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_13">
         <attribute name="title">
@@ -1845,8 +1857,8 @@ border-radius: 8px;
         <rect>
          <x>20</x>
          <y>10</y>
-         <width>461</width>
-         <height>261</height>
+         <width>621</width>
+         <height>331</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1856,7 +1868,7 @@ color:rgb(0, 0, 0)
 </string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab_15">
         <attribute name="title">
@@ -1865,10 +1877,10 @@ color:rgb(0, 0, 0)
         <widget class="QPushButton" name="pdf_tions">
          <property name="geometry">
           <rect>
-           <x>130</x>
-           <y>60</y>
-           <width>171</width>
-           <height>71</height>
+           <x>200</x>
+           <y>80</y>
+           <width>191</width>
+           <height>91</height>
           </rect>
          </property>
          <property name="font">
@@ -1892,32 +1904,6 @@ background-color: rgb(255,165,0,0.5);
          </property>
          <property name="text">
           <string>Generer Liste </string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton">
-         <property name="geometry">
-          <rect>
-           <x>350</x>
-           <y>180</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">*{
-color:rgb(255, 255, 255);
-
-}
-QPushButton {
-border-radius: 10px;
-background-color: orange;
-}
-QPushButton:hover{
-background-color: rgb(255,165,0,0.5);
-}</string>
-         </property>
-         <property name="text">
-          <string>Valider</string>
          </property>
         </widget>
        </widget>
@@ -1928,10 +1914,10 @@ background-color: rgb(255,165,0,0.5);
         <widget class="QPushButton" name="pdf_teurs">
          <property name="geometry">
           <rect>
-           <x>130</x>
-           <y>70</y>
-           <width>161</width>
-           <height>81</height>
+           <x>200</x>
+           <y>80</y>
+           <width>191</width>
+           <height>101</height>
           </rect>
          </property>
          <property name="font">
@@ -1955,32 +1941,6 @@ background-color: rgb(255,165,0,0.5);
          </property>
          <property name="text">
           <string>Generer Liste </string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_43">
-         <property name="geometry">
-          <rect>
-           <x>360</x>
-           <y>180</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">*{
-color:rgb(255, 255, 255);
-
-}
-QPushButton {
-border-radius: 10px;
-background-color: orange;
-}
-QPushButton:hover{
-background-color: rgb(255,165,0,0.5);
-}</string>
-         </property>
-         <property name="text">
-          <string>Valider</string>
          </property>
         </widget>
        </widget>
@@ -1992,8 +1952,8 @@ background-color: rgb(255,165,0,0.5);
       <rect>
        <x>6</x>
        <y>3</y>
-       <width>611</width>
-       <height>401</height>
+       <width>841</width>
+       <height>561</height>
       </rect>
      </property>
      <property name="text">
@@ -2013,7 +1973,7 @@ background-color: rgb(255,165,0,0.5);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>598</width>
+     <width>767</width>
      <height>22</height>
     </rect>
    </property>
@@ -2021,22 +1981,5 @@ background-color: rgb(255,165,0,0.5);
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>646</x>
-     <y>653</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>987</x>
-     <y>625</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
