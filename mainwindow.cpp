@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("SMART FACTORY");
     setWindowIcon(QIcon(":/53378.png"));
-    QPixmap bg(":/BackGround2.jpg");
+    QPixmap bg(":/black.jpg");
     ui->label_20->setPixmap(bg);
     ui->tableView_2->setModel(tmpFORMATION.afficher());
      ui->tableView_2->setModel(tmpFORMATION.afficher2());

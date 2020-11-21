@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>767</width>
-    <height>516</height>
+    <height>498</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -528,10 +528,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;</string>
+      <string notr="true">background-color: transparent;</string>
      </property>
      <property name="text">
       <string>FORMATIONS</string>
@@ -543,25 +540,6 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <x>140</x>
        <y>80</y>
        <width>101</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>80</y>
-       <width>111</width>
        <height>16</height>
       </rect>
      </property>
@@ -604,18 +582,10 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QtabWidget {
-            color: white;
-            border-image: url(:/img/bouton.png) 3 10 3 10;
-	font: 12pt &quot;calibri&quot;;
-            border-top: 3px transparent;
-            border-bottom: 3px transparent;
-            border-right: 10px transparent;
-            border-left: 10px transparent;
-        }</string>
+      <string notr="true">opacity: 0.5;</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">
@@ -636,7 +606,7 @@ color:rgb(0, 0, 0)
 }</string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="tabBarAutoHide">
         <bool>true</bool>
@@ -847,6 +817,88 @@ color:rgb(255, 255, 255);
          </property>
         </widget>
        </widget>
+       <widget class="QWidget" name="tab_17">
+        <attribute name="title">
+         <string>Afficher</string>
+        </attribute>
+        <widget class="QTableView" name="tableView_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>421</width>
+           <height>221</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 italic 8pt &quot;Times New Roman&quot;;</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_CODE">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>30</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>CODE</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_NOM">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>60</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>NOM</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_DOMAINE">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>90</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>DOMAINE</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_DEP">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>120</y>
+           <width>101</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>DEPARTEMENTS</string>
+         </property>
+        </widget>
+       </widget>
        <widget class="QWidget" name="tab_4">
         <attribute name="title">
          <string>Modifier</string>
@@ -1053,88 +1105,6 @@ border-radius: 8px;
          </property>
         </widget>
        </widget>
-       <widget class="QWidget" name="tab_17">
-        <attribute name="title">
-         <string>Afficher</string>
-        </attribute>
-        <widget class="QTableView" name="tableView_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>421</width>
-           <height>221</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 italic 8pt &quot;Times New Roman&quot;;</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_CODE">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>30</y>
-           <width>83</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>CODE</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_NOM">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>60</y>
-           <width>83</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>NOM</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_DOMAINE">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>90</y>
-           <width>83</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>DOMAINE</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_DEP">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>120</y>
-           <width>101</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>DEPARTEMENTS</string>
-         </property>
-        </widget>
-       </widget>
        <widget class="QWidget" name="tab_5">
         <attribute name="title">
          <string>Supprimer</string>
@@ -1231,7 +1201,7 @@ color:rgb(0, 0, 0)
 }</string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab_6">
         <attribute name="title">
@@ -1395,6 +1365,72 @@ background-color: rgb(255,165,0,0.5);
          </property>
         </widget>
        </widget>
+       <widget class="QWidget" name="tab_18">
+        <attribute name="title">
+         <string>afficher</string>
+        </attribute>
+        <widget class="QTableView" name="tableView">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>421</width>
+           <height>221</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 italic 8pt &quot;Times New Roman&quot;;</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_pre">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>130</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>PRENOM</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_cin">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>50</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>CIN</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_nom">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>90</y>
+           <width>83</width>
+           <height>18</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">opacity: 0.5;</string>
+         </property>
+         <property name="text">
+          <string>NOM</string>
+         </property>
+        </widget>
+       </widget>
        <widget class="QWidget" name="tab_7">
         <attribute name="title">
          <string>Modifier</string>
@@ -1554,72 +1590,6 @@ background-color: rgb(255,165,0,0.5);
          </property>
          <property name="text">
           <string>Valider</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="tab_18">
-        <attribute name="title">
-         <string>afficher</string>
-        </attribute>
-        <widget class="QTableView" name="tableView">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>421</width>
-           <height>221</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 italic 8pt &quot;Times New Roman&quot;;</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_pre">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>130</y>
-           <width>83</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>PRENOM</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_cin">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>50</y>
-           <width>83</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>CIN</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_nom">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>90</y>
-           <width>83</width>
-           <height>18</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>NOM</string>
          </property>
         </widget>
        </widget>
@@ -1857,8 +1827,8 @@ border-radius: 8px;
         <rect>
          <x>20</x>
          <y>10</y>
-         <width>621</width>
-         <height>331</height>
+         <width>541</width>
+         <height>281</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1917,7 +1887,7 @@ background-color: rgb(255,165,0,0.5);
            <x>200</x>
            <y>80</y>
            <width>191</width>
-           <height>101</height>
+           <height>91</height>
           </rect>
          </property>
          <property name="font">
@@ -1963,7 +1933,6 @@ background-color: rgb(255,165,0,0.5);
     <zorder>label_20</zorder>
     <zorder>label_15</zorder>
     <zorder>label_16</zorder>
-    <zorder>label_17</zorder>
     <zorder>label_18</zorder>
     <zorder>tabWidget</zorder>
    </widget>
