@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "etudiant.h"
 #include "produit.h"
+#include "fournisseur.h"
 #include <QMainWindow>
 #include <QString>
 #include <QSqlQuery>
@@ -48,9 +49,20 @@ private slots:
 
     void on_pushButton_P_RECHERCHE_clicked();
 
+    void on_lineEdit_r_d_textChanged(const QString &arg1);
+
+    void on_ajouter_fournisseur_clicked();
+
+    void on_modifier_fournisseur_clicked();
+
+    void on_tri_id_fournisseur_clicked();
+
+    void on_supprimer_fournisseur_clicked();
+
 private:
     Ui::MainWindow *ui;
     etudiant tempEtudiant;
     produit tempProduit;
+    fournisseur tempFournisseur;
 };
 #endif // MAINWINDOW_H

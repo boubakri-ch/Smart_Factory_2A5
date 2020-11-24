@@ -1,4 +1,4 @@
-QT       += core gui sql printsupport network charts
+QT       += core gui sql printsupport serialport network charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     connexion.cpp \
     etudiant.cpp \
+    fournisseur.cpp \
     main.cpp \
     mainwindow.cpp \
     produit.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     connexion.h \
     etudiant.h \
+    fournisseur.h \
     mainwindow.h \
     produit.h
 

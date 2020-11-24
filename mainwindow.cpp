@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include "etudiant.h"
 #include "produit.h"
+#include "fournisseur.h"
+#include<QDate>
+#include<QDateTime>
+#include<QSqlQuery>
 #include <QMessageBox>
 #include <QTabWidget>
 #include <QString>
@@ -24,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableView->setModel(tempEtudiant.afficher());
     ui->tableView_3->setModel(tempProduit.afficherp());
+    ui->table_fournisseur->setModel(tempFournisseur.afficher_fournisseur());
 }
 
 MainWindow::~MainWindow()
@@ -283,3 +288,74 @@ void MainWindow::on_pushButton_P_RECHERCHE_clicked()
     ui->tableView_4->setModel(model1);
     ui->lineEdit_P_R->clear();
 }
+
+void MainWindow::on_lineEdit_r_d_textChanged(const QString &arg1)
+{
+    QString nom = ui->lineEdit_r_d->text();
+    ui->tableView_5->setModel(tempEtudiant.rechercher_dynamique(nom));
+
+}
+
+void MainWindow::on_ajouter_fournisseur_clicked()
+{
+    int id=ui->id_fournisseur->text().toInt();
+        QString Num=ui->num_tel_fournisseur->text();
+         QString RIB=ui->RIB_fournisseur->text();
+       QString nom=ui->nom_fournisseur->text();
+        QString prenom=ui->prenom_fournisseur->text();
+        fournisseur F(nom,prenom,id,Num,RIB);
+        bool test=F.ajouter();
+
+
+        if(test)
+        {
+         ui->table_fournisseur->setModel(tempFournisseur.afficher_fournisseur());
+            QMessageBox::information(nullptr, QObject::tr("Ajouter un fournisseur"),
+                                   QObject::tr("fournisseur ajoutée.\n"
+                                               "Click Cancel to exit."), QMessageBox::Cancel);
+        }
+        /*QSqlQueryModel *model= new QSqlQueryModel();
+        QSqlQuery *query=new QSqlQuery();
+        query->prepare("select ID_FOURNISSEUR from fournisseur");
+        query->exec();
+        model->setQuery(*query);
+        ui->list_fournisseur->setModel(model);
+         ui->list_fournisseur_2->setModel(model);*/
+}
+
+void MainWindow::on_modifier_fournisseur_clicked()
+{
+    int id=ui->id_modifier->text().toInt();
+        QString nom=ui->nom_modifier->text();
+         QString prenom=ui->prenom_modifier->text();
+        QString RIB=ui->RIB_modifier->text();
+         QString Num=ui->Num_modifier->text();
+         fournisseur F(nom,prenom,id,Num,RIB);
+         bool test=F.modifier();
+         if(test)
+         {
+     ui->table_fournisseur->setModel(tempFournisseur.afficher_fournisseur());
+             QMessageBox::information(nullptr, QObject::tr("modifier un fournisseur"),
+                                    QObject::tr("fournisseur modifier.\n"
+                                                "Click Cancel to exit."), QMessageBox::Cancel);
+         }
+}
+
+void MainWindow::on_tri_id_fournisseur_clicked()
+{
+    ui->table_fournisseur->setModel(tempFournisseur.tri_fournisseur());
+}
+
+void MainWindow::on_supprimer_fournisseur_clicked()
+{
+    QString id=ui->id_f_supp->text();
+        bool test=tempFournisseur.supprimer(id);
+        if(test)
+        {
+            ui->table_fournisseur->setModel(tempFournisseur.afficher_fournisseur());
+                    QMessageBox::information(nullptr, QObject::tr("suprrimer un fournisseur"),
+                                           QObject::tr("fournisseur supprimer.\n"
+                                                       "Click Cancel to exit."), QMessageBox::Cancel);
+        }
+}
+

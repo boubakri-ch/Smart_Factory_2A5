@@ -24,6 +24,7 @@ public:
     bool modifier();
     QSqlQueryModel * afficher_tri_alphabetique();
     QSqlQueryModel * afficher_tri_identifiant();
+    QSqlQueryModel * rechercher_dynamique(QString);
 
 
 

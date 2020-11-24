@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.13.2, 2020-11-19T23:47:59. -->
+<!-- Written by QtCreator 4.13.2, 2020-11-23T23:01:58. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -326,8 +326,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ajouteretsupprimer2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/uxser/Desktop/application c++/gestion stock/ajouteretsupprimer.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/uxser/Desktop/application c++/gestion stock/ajouteretsupprimer.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/uxser/Desktop/Nouveau dossier (2)/gestion stock/ajouteretsupprimer.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/uxser/Desktop/Nouveau dossier (2)/gestion stock/ajouteretsupprimer.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>

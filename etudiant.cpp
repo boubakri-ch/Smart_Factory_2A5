@@ -1,3 +1,4 @@
+
 #include "etudiant.h"
 #include <QString>
 #include <QSqlQuery>
@@ -53,7 +54,7 @@ bool etudiant::supprimer(int idd)
 
 bool etudiant::modifier(){
     QSqlQuery query1;
-    query1.prepare("UPDATE etudiant set type=:nom,prenom=:prenom WHERE id=:id");
+    query1.prepare("UPDATE etudiant set type=:nom,nom=:prenom WHERE id=:id");
     query1.bindValue(":id",id);
     query1.bindValue(":nom",nom);
     query1.bindValue(":prenom",prenom);
@@ -75,6 +76,17 @@ QSqlQueryModel * etudiant::afficher_tri_identifiant(){
 
     QSqlQueryModel * query = new QSqlQueryModel();
     query->setQuery("select * from etudiant ORDER BY id");
+    query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
+    query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
+    return query;
+
+}
+
+QSqlQueryModel * etudiant::rechercher_dynamique(QString nom){
+
+    QSqlQueryModel * query = new QSqlQueryModel();
+    query->setQuery("select * from etudiant where nom like '"+nom+"%' ");
     query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
     query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
