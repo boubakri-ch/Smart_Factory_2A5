@@ -7,7 +7,7 @@
 #include<QDateTime>
 #include<QSqlQuery>
 
-
+//git first commit
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
