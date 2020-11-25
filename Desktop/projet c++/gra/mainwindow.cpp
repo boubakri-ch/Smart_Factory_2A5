@@ -150,7 +150,7 @@ void MainWindow::on_pushButton_7_clicked()
 {
       ui->table_four->setModel(tab_four.affichertri());
 }
-
+//recherche simple
 void MainWindow::on_pushButton_8_clicked()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
