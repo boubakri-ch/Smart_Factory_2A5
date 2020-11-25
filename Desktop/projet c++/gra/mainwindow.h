@@ -9,7 +9,7 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
+class QMediaPlayer;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -40,10 +40,22 @@ private slots:
 
 
 
+    void on_apporter_clicked();
+
+    void on_play_clicked();
+
+    void on_pause_clicked();
+
+    void on_stop_clicked();
+
+    void on_mute_clicked();
+
+    void on_volume_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     FOURNISSEUR tab_four;
-
+QMediaPlayer *mMediaPlayer;
     PRODUIT tab_pro;
 
 #endif // MAINWINDOW_H

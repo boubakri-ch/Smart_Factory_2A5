@@ -6,6 +6,8 @@
 #include<QDate>
 #include<QDateTime>
 #include<QSqlQuery>
+#include<QMediaPlayer>
+#include<QFileDialog>
 
 //git first commit
 MainWindow::MainWindow(QWidget *parent)
@@ -15,6 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->table_four->setModel(tab_four.afficher());
     ui->tab_pro->setModel(tab_pro.afficher());
+    mMediaPlayer = new QMediaPlayer(this);
+    connect(mMediaPlayer,& QMediaPlayer::positionChanged,[&](qint64 pos){
+        ui->avance->setValue(pos);
+    });
+    connect(mMediaPlayer,& QMediaPlayer::durationChanged,[&] (quint64 dur)
+    {
+        ui->avance->setMaximum(dur);
+    });
 
 
 
@@ -168,4 +178,46 @@ void MainWindow::on_pushButton_8_clicked()
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("RIB"));
     ui->table_four->setModel(model);
     ui->lineEdit_r_f->clear();
+}
+
+void MainWindow::on_apporter_clicked()
+{
+    QString filename=QFileDialog::getOpenFileName(this,"apporter");
+    if(filename.isEmpty()){
+        return;
+    }
+    mMediaPlayer->setMedia(QUrl::fromLocalFile(filename));
+    mMediaPlayer->setVolume(ui->volume->value());
+            on_play_clicked();
+}
+
+void MainWindow::on_play_clicked()
+{
+    mMediaPlayer->play();
+}
+
+void MainWindow::on_pause_clicked()
+{
+   mMediaPlayer->pause();
+}
+
+void MainWindow::on_stop_clicked()
+{
+    mMediaPlayer->stop();
+}
+
+void MainWindow::on_mute_clicked()
+{
+    if(ui->mute->text()=="mute")
+    {
+        mMediaPlayer->setMuted(true);
+        ui->mute->setText("unMute");
+    }
+    mMediaPlayer->setMuted(false);
+    ui->mute->setText("Mute");
+}
+
+void MainWindow::on_volume_valueChanged(int value)
+{
+      mMediaPlayer->setVolume(value);
 }
