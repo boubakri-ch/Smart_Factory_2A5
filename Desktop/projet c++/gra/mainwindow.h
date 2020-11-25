@@ -3,6 +3,7 @@
 #include"fournisseur.h"
 #include"produit.h"
 
+
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -37,10 +38,13 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
     FOURNISSEUR tab_four;
 
     PRODUIT tab_pro;
-};
+
 #endif // MAINWINDOW_H
+};
