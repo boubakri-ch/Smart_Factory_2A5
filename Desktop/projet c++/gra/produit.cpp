@@ -68,6 +68,48 @@ model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_PRODUIT"));
 model->setHeaderData(4, Qt::Horizontal, QObject::tr("id_f"));
 return model ;
 }
+QSqlQueryModel *PRODUIT::afficher_tri_nom()
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+
+    model->setQuery("select * from PRODUIT order by nom_PRODUIT");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_PRODUIT"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("quantiter_PRODUIT"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_PRODUIT"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("id_f"));
+
+    return model ;
+
+}
+QSqlQueryModel *PRODUIT::afficher_tri_quantiter()
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+
+    model->setQuery("select * from PRODUIT order by quantiter_PRODUIT");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_PRODUIT"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("quantiter_PRODUIT"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_PRODUIT"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("id_f"));
+
+    return model ;
+
+}
+QSqlQueryModel *PRODUIT::afficher_tri_date()
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+
+    model->setQuery("select * from PRODUIT order by date_PRODUIT");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_PRODUIT"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("quantiter_PRODUIT"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_PRODUIT"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("id_f"));
+
+    return model ;
+
+}
 bool PRODUIT::supprimer(QString id) {
 QSqlQuery query;
 QString res=id;

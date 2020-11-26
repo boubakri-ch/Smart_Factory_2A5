@@ -8,6 +8,10 @@
 #include<QSqlQuery>
 #include<QMediaPlayer>
 #include<QFileDialog>
+#include <QPainter>
+#include <QtPrintSupport/QPrinter>
+#include <QTextDocument>
+#include <QPrintDialog>
 
 //git first commit
 MainWindow::MainWindow(QWidget *parent)
@@ -220,4 +224,139 @@ void MainWindow::on_mute_clicked()
 void MainWindow::on_volume_valueChanged(int value)
 {
       mMediaPlayer->setVolume(value);
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    QString strStream;
+                    QTextStream out(&strStream);
+                    const int rowCount = ui->table_four->model()->rowCount();
+                    const int columnCount =ui->table_four->model()->columnCount();
+
+                    out <<  "<html>\n"
+                            "<head>\n"
+                            "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                            <<  QString("<title>%1</title>\n").arg("FOURNISSEUR")
+                            <<  "</head>\n"
+                            "<body bgcolor=#ffffff link=#5000A0>\n"
+                                "<img src='C:/logo.png' width='100' height='100'>\n"
+                                "<h1>Liste des fournisseur </h1>"
+
+
+
+                                "<table border=1 cellspacing=0 cellpadding=2>\n";
+
+
+                    // headers
+                        out << "<thead><tr bgcolor=#f0f0f0>";
+                        for (int column = 0; column < columnCount; column++)
+                            if (!ui->table_four->isColumnHidden(column))
+                                out << QString("<th>%1</th>").arg(ui->table_four->model()->headerData(column, Qt::Horizontal).toString());
+                        out << "</tr></thead>\n";
+                        // data table
+                           for (int row = 0; row < rowCount; row++) {
+                               out << "<tr>";
+                               for (int column = 0; column < columnCount; column++) {
+                                   if (!ui->table_four->isColumnHidden(column)) {
+                                       QString data = ui->table_four->model()->data(ui->table_four->model()->index(row, column)).toString().simplified();
+                                       out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                                   }
+                               }
+                               out << "</tr>\n";
+                           }
+                           out <<  "</table>\n"
+                               "</body>\n"
+                               "</html>\n";
+
+            QTextDocument *document = new QTextDocument();
+                document->setHtml(strStream);
+
+
+              //  QTextDocument document;
+               // document.setHtml(html);
+                QPrinter printer(QPrinter::PrinterResolution);
+                printer.setOutputFormat(QPrinter::PdfFormat);
+                printer.setOutputFileName("fournissseur.pdf");
+                document->print(&printer);
+    }
+
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    QString strStream;
+                    QTextStream out(&strStream);
+                    const int rowCount = ui->tab_pro->model()->rowCount();
+                    const int columnCount =ui->tab_pro->model()->columnCount();
+
+                    out <<  "<html>\n"
+                            "<head>\n"
+                            "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                            <<  QString("<title>%1</title>\n").arg("PRODUIT")
+                            <<  "</head>\n"
+                            "<body bgcolor=#ffffff link=#5000A0>\n"
+                                "<img src='C:/logo.png' width='100' height='100'>\n"
+                                "<h1>Liste des produit </h1>"
+
+
+
+                                "<table border=1 cellspacing=0 cellpadding=2>\n";
+
+
+                    // headers
+                        out << "<thead><tr bgcolor=#f0f0f0>";
+                        for (int column = 0; column < columnCount; column++)
+                            if (!ui->tab_pro->isColumnHidden(column))
+                                out << QString("<th>%1</th>").arg(ui->tab_pro->model()->headerData(column, Qt::Horizontal).toString());
+                        out << "</tr></thead>\n";
+                        // data table
+                           for (int row = 0; row < rowCount; row++) {
+                               out << "<tr>";
+                               for (int column = 0; column < columnCount; column++) {
+                                   if (!ui->tab_pro->isColumnHidden(column)) {
+                                       QString data = ui->tab_pro->model()->data(ui->tab_pro->model()->index(row, column)).toString().simplified();
+                                       out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                                   }
+                               }
+                               out << "</tr>\n";
+                           }
+                           out <<  "</table>\n"
+                               "</body>\n"
+                               "</html>\n";
+
+            QTextDocument *document = new QTextDocument();
+                document->setHtml(strStream);
+
+
+              //  QTextDocument document;
+               // document.setHtml(html);
+                QPrinter printer(QPrinter::PrinterResolution);
+                printer.setOutputFormat(QPrinter::PdfFormat);
+                printer.setOutputFileName("produit.pdf");
+                document->print(&printer);
+
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+     ui->table_four->setModel(tab_four.afficher_tri_id());
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    ui->table_four->setModel(tab_four.afficher_tri_prenom());
+}
+
+void MainWindow::on_pushButton_13_clicked()
+{
+    ui->tab_pro->setModel(tab_pro.afficher_tri_quantiter());
+}
+
+void MainWindow::on_pushButton_14_clicked()
+{
+   ui->tab_pro->setModel(tab_pro.afficher_tri_date());
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    ui->tab_pro->setModel(tab_pro.afficher_tri_nom());
 }

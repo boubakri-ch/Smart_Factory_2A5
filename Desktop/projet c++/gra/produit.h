@@ -20,6 +20,9 @@ public:
     int get_id();
     bool ajouter();
     QSqlQueryModel *afficher();
+    QSqlQueryModel *afficher_tri_nom();
+     QSqlQueryModel *afficher_tri_quantiter();
+       QSqlQueryModel *afficher_tri_date();
     bool supprimer(QString);
     bool modifier();
 private:

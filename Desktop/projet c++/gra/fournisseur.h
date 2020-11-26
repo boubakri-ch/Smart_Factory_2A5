@@ -19,6 +19,8 @@ public:
     bool ajouter();
     QSqlQueryModel *afficher();
     QSqlQueryModel *affichertri();
+     QSqlQueryModel *afficher_tri_id();
+       QSqlQueryModel *afficher_tri_prenom();
     bool supprimer(QString);
     bool modifier();
 private:
