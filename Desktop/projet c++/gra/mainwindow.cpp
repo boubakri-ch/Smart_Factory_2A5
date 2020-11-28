@@ -12,6 +12,7 @@
 #include <QtPrintSupport/QPrinter>
 #include <QTextDocument>
 #include <QPrintDialog>
+#include<QDialog>
 
 //git first commit
 MainWindow::MainWindow(QWidget *parent)
@@ -30,7 +31,12 @@ MainWindow::MainWindow(QWidget *parent)
         ui->avance->setMaximum(dur);
     });
 
-
+    QSqlQueryModel *model=new QSqlQueryModel();
+       QSqlQuery qry;
+       qry.prepare("select ID_FOURNISSEUR from FOURNISSEUR");
+       qry.exec();
+       model->setQuery(qry);
+       ui->list_fournisseur->setModel(model);
 
 
 }
@@ -46,6 +52,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_2_clicked()
 {
+
     int id=ui->id->text().toInt();
      QString nom=ui->nom_fournisseur_2->text();
      QString prenom=ui->prenom_fournisseur->text();
@@ -164,25 +171,8 @@ void MainWindow::on_pushButton_7_clicked()
 {
       ui->table_four->setModel(tab_four.affichertri());
 }
-//recherche simple
-void MainWindow::on_pushButton_8_clicked()
-{
-    QSqlQueryModel * model = new QSqlQueryModel();
-    QSqlQuery query1;
-    int ide=ui->lineEdit_r_f->text().toInt();
-    query1.prepare("select * from FOURNISSEUR where id_fournisseur=:id");
-    QString idds=QString::number(ide);
-    query1.bindValue(":id",idds);
-    query1.exec();
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_FOURNISSEUR"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom_FOURNISSEUR"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATE_FOURNISSEUR"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Num_tel"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("RIB"));
-    ui->table_four->setModel(model);
-    ui->lineEdit_r_f->clear();
-}
+
+
 
 void MainWindow::on_apporter_clicked()
 {
@@ -359,4 +349,34 @@ void MainWindow::on_pushButton_14_clicked()
 void MainWindow::on_pushButton_15_clicked()
 {
     ui->tab_pro->setModel(tab_pro.afficher_tri_nom());
+}
+
+void MainWindow::on_lineEdit_r_f_textChanged(const QString &arg1)
+{
+    QString q = arg1;
+
+            if (q=="")
+            {
+                ui->table_four->setModel(tab_four.afficher());
+            }
+            else {
+              ui->table_four->setModel(tab_four.afficher_rechrerche(q)) ;
+
+
+            }
+}
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    QString q = arg1;
+
+            if (q=="")
+            {
+                ui->tab_pro->setModel(tab_pro.afficher());
+            }
+            else {
+              ui->tab_pro->setModel(tab_pro.afficher_rechrerche(q)) ;
+
+
+            }
 }

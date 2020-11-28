@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
      bool test=c.createConnection();
      MainWindow w;
 
-
+w.show();
      if(test)
-     {w.show();
+     {
 
          QMessageBox::critical(nullptr, QObject::tr("database is open"),
                      QObject::tr("connection successful.\n"

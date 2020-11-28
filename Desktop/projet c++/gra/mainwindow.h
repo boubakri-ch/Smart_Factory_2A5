@@ -36,7 +36,7 @@ private slots:
 
     void on_pushButton_7_clicked();
 
-    void on_pushButton_8_clicked();
+
 
 
 
@@ -65,6 +65,10 @@ private slots:
     void on_pushButton_14_clicked();
 
     void on_pushButton_15_clicked();
+
+    void on_lineEdit_r_f_textChanged(const QString &arg1);
+
+    void on_lineEdit_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

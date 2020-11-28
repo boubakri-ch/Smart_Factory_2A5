@@ -23,6 +23,7 @@ public:
        QSqlQueryModel *afficher_tri_prenom();
     bool supprimer(QString);
     bool modifier();
+   QSqlQueryModel * afficher_rechrerche(QString );
 private:
     int id;
     QString nom;

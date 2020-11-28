@@ -129,3 +129,16 @@ bool PRODUIT::modifier(){
     return query.exec();
 
 }
+QSqlQueryModel * PRODUIT::afficher_rechrerche(QString q){
+
+    QSqlQueryModel *model=new QSqlQueryModel();
+
+    model->setQuery("select * from PRODUIT where nom_PRODUIT like '%"+q+"%' ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_PRODUIT"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("quantiter_PRODUIT"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_PRODUIT"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("id_f"));
+
+ return model ;
+}

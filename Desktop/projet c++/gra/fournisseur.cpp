@@ -99,7 +99,7 @@ return model ;
 QSqlQueryModel *FOURNISSEUR::afficher_tri_id()
 {
     QSqlQueryModel *model=new QSqlQueryModel();
-    model->setQuery("select * from FOURNISSEUR order by id_FOURNISEEUR");
+    model->setQuery("select * from FOURNISSEUR order by id_FOURNISSEUR");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_FOURNISSEUR"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom_FOURNISSEUR"));
@@ -145,4 +145,17 @@ bool FOURNISSEUR::modifier(){
     return query.exec();
 
 
+}
+QSqlQueryModel * FOURNISSEUR::afficher_rechrerche(QString q){
+ QSqlQueryModel *model=new QSqlQueryModel();
+ model->setQuery("select * from FOURNISSEUR where nom_FOURNISSEUR like '%"+q+"%'  ");
+ model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
+ model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_FOURNISSEUR"));
+ model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom_FOURNISSEUR"));
+ model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATE_FOURNISSEUR"));
+ model->setHeaderData(4, Qt::Horizontal, QObject::tr("Num_tel"));
+ model->setHeaderData(5, Qt::Horizontal, QObject::tr("RIB"));
+
+
+ return model ;
 }
