@@ -11,8 +11,8 @@
 #include <QPainter>
 #include <QtPrintSupport/QPrinter>
 #include <QTextDocument>
-#include <QPrintDialog>
-#include<QDialog>
+
+
 
 //git first commit
 MainWindow::MainWindow(QWidget *parent)
@@ -60,8 +60,13 @@ void MainWindow::on_pushButton_2_clicked()
       QString RIB=ui->RIB_fournisseur->text();
      FOURNISSEUR F(nom,prenom,id,Num,RIB);
      bool test=F.ajouter();
+if(ui->nom_fournisseur_2->text().isEmpty()||ui->Num_fournisseur->text().isEmpty()||ui->RIB_fournisseur->text().isEmpty()||ui->prenom_fournisseur->text().isEmpty()||ui->id->text().contains(QRegExp("^[1-9]"))==0){
 
-
+    QMessageBox::information(nullptr, QObject::tr("ERREUR"),
+                           QObject::tr("ERREUR.\n"
+                                       "Click Cancel to exit."), QMessageBox::Cancel);
+}
+else{
      if(test)
      {
  ui->table_four->setModel(tab_four.afficher());
@@ -69,6 +74,7 @@ void MainWindow::on_pushButton_2_clicked()
                                 QObject::tr("fournisseur ajoutée.\n"
                                             "Click Cancel to exit."), QMessageBox::Cancel);
      }
+}
      QSqlQueryModel *model= new QSqlQueryModel();
      QSqlQuery *query=new QSqlQuery();
      query->prepare("select ID_FOURNISSEUR from fournisseur");
@@ -136,23 +142,31 @@ void MainWindow::on_pushButton_6_clicked()
      QString date=ui->date_ajouter->date().toString("dd-MM-yyyy");
      PRODUIT P(nom,date,quantiter,id,id_f);
      bool test=P.ajouter();
+     if(ui->nom_ajouter->text().isEmpty()||ui->quantiter_ajouter->text().isEmpty()||ui->id_ajouter->text().contains(QRegExp("^[1-9]"))==0)
+     {
+
+                 QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                        QObject::tr("Erreur.\n"
+                                                    "Click Cancel to exit."), QMessageBox::Cancel);
+     }
+     else{
      if(test)
      {
- ui->tab_pro->setModel(tab_pro.afficher());
+      ui->tab_pro->setModel(tab_pro.afficher());
          QMessageBox::information(nullptr, QObject::tr("Ajouter un produit"),
                                 QObject::tr("produit ajoutée.\n"
                                             "Click Cancel to exit."), QMessageBox::Cancel);
      }
 
-
+}
 }
 
 void MainWindow::on_pushButton_5_clicked()
 {
 
     int id=ui->id_modifier_2->text().toInt();
-int id_f=ui->list_fournisseur_2->currentText().toInt();
-      QString date=ui->date_modifier_2->text();
+    int id_f=ui->list_fournisseur_2->currentText().toInt();
+    QString date=ui->date_modifier_2->text();
     QString nom=ui->nom_modifier_2->text();
      QString quantiter=ui->quantiter_modifier->text();
      PRODUIT P(nom,date,quantiter,id,id_f);
@@ -266,7 +280,7 @@ void MainWindow::on_pushButton_9_clicked()
                // document.setHtml(html);
                 QPrinter printer(QPrinter::PrinterResolution);
                 printer.setOutputFormat(QPrinter::PdfFormat);
-                printer.setOutputFileName("fournissseur.pdf");
+                printer.setOutputFileName("C://PDF//fournissseur.pdf");
                 document->print(&printer);
     }
 

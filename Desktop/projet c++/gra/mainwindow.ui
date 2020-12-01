@@ -23,9 +23,11 @@
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
        <font>
-        <weight>75</weight>
-        <italic>true</italic>
-        <bold>true</bold>
+        <family>MV Boli</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
         <underline>true</underline>
         <strikeout>false</strikeout>
        </font>
@@ -34,7 +36,7 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(66, 66, 66);
+       <string notr="true">background-color: rgb(63, 63, 63);
 </string>
       </property>
       <property name="tabPosition">
@@ -86,7 +88,7 @@
          <string notr="true">alternate-background-color: rgb(0, 0, 127);</string>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <property name="tabsClosable">
          <bool>true</bool>
@@ -229,7 +231,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="RIB_fournisseur">
+           <widget class="QLineEdit" name="Num_fournisseur">
             <property name="styleSheet">
              <string notr="true">background-color: #c2c7d5;
 	color: #000;
@@ -265,7 +267,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="Num_fournisseur">
+           <widget class="QLineEdit" name="RIB_fournisseur">
             <property name="styleSheet">
              <string notr="true">background-color: #c2c7d5;
 	color: #000;
@@ -870,6 +872,30 @@ background-color: rgb(170, 170, 127);</string>
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QLabel" name="label_23">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>420</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>RECHERCHE</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
@@ -1561,7 +1587,7 @@ QPushButton::hover
        <widget class="QLineEdit" name="lineEdit">
         <property name="geometry">
          <rect>
-          <x>560</x>
+          <x>670</x>
           <y>400</y>
           <width>361</width>
           <height>31</height>
@@ -1574,6 +1600,30 @@ QPushButton::hover
 	border: none;
 	border-radius: 2px;
 	padding: 3px;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>400</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>RECHERCHE</string>
         </property>
        </widget>
       </widget>
