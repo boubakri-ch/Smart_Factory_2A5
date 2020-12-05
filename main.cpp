@@ -1,24 +1,31 @@
 #include "mainwindow.h"
-
+#include "wwindow.h"
 #include <QApplication>
-#include "connexion.h"
 #include <QMessageBox>
+#include <QPushButton>
+#include "connection.h"
+#include<QtDebug>
+#include <QtUiTools/QtUiTools>
+
+
 
 int main(int argc, char *argv[])
+
 {
     QApplication a(argc, argv);
-    Connexion c;
-    bool test =c.ouvrirConnexion();
-    MainWindow w;
-    if(test)
-    {
-        w.show();
-        QMessageBox::information(nullptr, QObject::tr("database is open"),
-                                 QObject::tr("connection successful.\n""Click Cancel to exit."), QMessageBox::Cancel);
-    }
-    else
-        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
-                                 QObject::tr("connection failed.\n""Click Cancel to exit."), QMessageBox::Cancel);
+    QMainWindow window;
+    WWindow wwindow;
+    Gestion_Coli_Courrier ges;
 
+
+
+    try{
+
+        wwindow.show();
+
+
+    }catch(QString s){
+        qDebug()<<s;
+    }
     return a.exec();
 }
