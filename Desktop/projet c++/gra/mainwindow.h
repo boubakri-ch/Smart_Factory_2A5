@@ -2,14 +2,18 @@
 #define MAINWINDOW_H
 #include"fournisseur.h"
 #include"produit.h"
-
-
+#include"arduino.h"
+#include"statistique.h"
+#include<QSound>
+#include <QRegExpValidator>
 #include <QMainWindow>
-
+#include <QTcpSocket>
+#include"historique.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 class QMediaPlayer;
+class QSystemTrayIcon;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -23,7 +27,6 @@ private slots:
 
     void on_pushButton_2_clicked();
 
-
     void on_pushButton_clicked();
 
     void on_pushButton_3_clicked();
@@ -35,10 +38,6 @@ private slots:
     void on_pushButton_5_clicked();
 
     void on_pushButton_7_clicked();
-
-
-
-
 
     void on_apporter_clicked();
 
@@ -70,11 +69,31 @@ private slots:
 
     void on_lineEdit_textChanged(const QString &arg1);
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_combo_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_18_clicked();
+    void leer();
+    void on_pushButton_19_clicked();
+
 private:
     Ui::MainWindow *ui;
     FOURNISSEUR tab_four;
-QMediaPlayer *mMediaPlayer;
+    QMediaPlayer *mMediaPlayer;
     PRODUIT tab_pro;
-
+    arduino A;
+    QByteArray data;
+    QSound *son;
+     QSystemTrayIcon *mSystemTrayIcon;
+     statistique *stat;
+     QTcpSocket*mSocket;
+     Historique histo;
 #endif // MAINWINDOW_H
 };

@@ -119,7 +119,7 @@ return query.exec();
 }
 bool PRODUIT::modifier(){
     QSqlQuery query;
-    query.prepare("update PRODUIT set id_produit=:id,nom_produit=:nom,date_produit=:date,quantiter_produit=:prenom where id_produit=:id");
+    query.prepare("update PRODUIT set id_produit=:id,nom_produit=:nom,date_produit=:date,quantiter_produit=:quantiter,id_f=:id_f where id_produit=:id");
     query.bindValue(":id",id);
     query.bindValue(":nom",nom);
     query.bindValue(":date",date);
