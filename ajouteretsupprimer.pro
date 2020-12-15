@@ -11,16 +11,20 @@ CONFIG += c++11
 SOURCES += \
     connexion.cpp \
     etudiant.cpp \
+    formateur.cpp \
     fournisseur.cpp \
     main.cpp \
     mainwindow.cpp \
+    matierepremiere.cpp \
     produit.cpp
 
 HEADERS += \
     connexion.h \
     etudiant.h \
+    formateur.h \
     fournisseur.h \
     mainwindow.h \
+    matierepremiere.h \
     produit.h
 
 FORMS += \

@@ -22,9 +22,10 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier();
-    QSqlQueryModel * afficher_tri_alphabetique();
-    QSqlQueryModel * afficher_tri_identifiant();
+    QSqlQueryModel * afficher_tri_alphabetique_categorie();
+    QSqlQueryModel * afficher_tri_identifiant_categorie();
     QSqlQueryModel * rechercher_dynamique(QString);
+    QSqlQueryModel * afficher_tri_descendant_categorie();
 
 
 

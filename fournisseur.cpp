@@ -75,7 +75,7 @@ return model ;
 QSqlQueryModel *fournisseur::tri_fournisseur(){
 
 QSqlQueryModel *model=new QSqlQueryModel();
-model->setQuery("select * from FOURNISSEUR ORDER BY id_fournisseur");
+model->setQuery("select * from FOURNISSEUR ORDER BY id_fournisseur ASC");
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
 model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_FOURNISSEUR"));
 model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom_FOURNISSEUR"));

@@ -20,7 +20,7 @@ bool etudiant::ajouter(){
 
     QSqlQuery query;
 
-    query.prepare("insert into etudiant (id,nom,type)"
+    query.prepare("insert into categorie (id,nom,type)"
                   "values(:id,:nom,:prenom)");
     QString ids=QString::number(id);
     query.bindValue(":id",ids);
@@ -33,7 +33,7 @@ bool etudiant::ajouter(){
 QSqlQueryModel * etudiant::afficher(){
 
     QSqlQueryModel * query = new QSqlQueryModel();
-    query->setQuery("select * from etudiant");
+    query->setQuery("select * from categorie");
     query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
     query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
@@ -45,7 +45,7 @@ bool etudiant::supprimer(int idd)
 {
     QSqlQuery query;
 
-    query.prepare("Delete from etudiant where id=:id");
+    query.prepare("Delete from categorie where id=:id");
     QString idds=QString::number(idd);
     query.bindValue(":id",idds);
     return query.exec();
@@ -54,7 +54,7 @@ bool etudiant::supprimer(int idd)
 
 bool etudiant::modifier(){
     QSqlQuery query1;
-    query1.prepare("UPDATE etudiant set type=:nom,nom=:prenom WHERE id=:id");
+    query1.prepare("UPDATE categorie set type=:nom,nom=:prenom WHERE id=:id");
     query1.bindValue(":id",id);
     query1.bindValue(":nom",nom);
     query1.bindValue(":prenom",prenom);
@@ -62,20 +62,20 @@ bool etudiant::modifier(){
     return (query1.exec());
 }
 
-QSqlQueryModel * etudiant::afficher_tri_alphabetique(){
+QSqlQueryModel * etudiant::afficher_tri_alphabetique_categorie(){
 
     QSqlQueryModel * query = new QSqlQueryModel();
-    query->setQuery("select * from etudiant ORDER BY nom");
+    query->setQuery("select * from categorie ORDER BY nom");
     query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
     query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
     return query;
 
 }
-QSqlQueryModel * etudiant::afficher_tri_identifiant(){
+QSqlQueryModel * etudiant::afficher_tri_identifiant_categorie(){
 
     QSqlQueryModel * query = new QSqlQueryModel();
-    query->setQuery("select * from etudiant ORDER BY id");
+    query->setQuery("select * from categorie ORDER BY id");
     query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
     query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
@@ -86,7 +86,7 @@ QSqlQueryModel * etudiant::afficher_tri_identifiant(){
 QSqlQueryModel * etudiant::rechercher_dynamique(QString nom){
 
     QSqlQueryModel * query = new QSqlQueryModel();
-    query->setQuery("select * from etudiant where nom like '"+nom+"%' ");
+    query->setQuery("select * from categorie where nom like '"+nom+"%' or id like '"+nom+"%' or type like '"+nom+"%' ");
     query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
     query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
     query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
@@ -94,4 +94,13 @@ QSqlQueryModel * etudiant::rechercher_dynamique(QString nom){
 
 }
 
+QSqlQueryModel * etudiant::afficher_tri_descendant_categorie(){
 
+    QSqlQueryModel * query = new QSqlQueryModel();
+    query->setQuery("select * from categorie ORDER BY id DESC");
+    query->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
+    query->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    query->setHeaderData(2,Qt::Horizontal,QObject::tr("Type"));
+    return query;
+
+}
