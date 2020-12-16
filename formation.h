@@ -22,6 +22,7 @@ public:
     bool supprimer(int);
     bool modifier(int,QString,QString,QString);
     QSqlQueryModel * rechercher(const QString);
+    QSqlQueryModel * afficher_stat ();
 
 private:
     QString nom,domaine,departement;

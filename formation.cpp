@@ -131,3 +131,11 @@ QSqlQueryModel * FORMATION :: rechercher(QString ch)
 
     return model;
 }
+QSqlQueryModel * FORMATION :: afficher_stat () {
+
+    QSqlQueryModel * query = new QSqlQueryModel();
+       query->setQuery("select SUM(code) from formation ");
+       query->setHeaderData(0,Qt::Horizontal,QObject::tr("formation total"));
+
+       return query;
+     }
