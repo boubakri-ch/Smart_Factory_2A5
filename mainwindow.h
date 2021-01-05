@@ -5,7 +5,9 @@
 #include "fournisseur.h"
 #include "matierepremiere.h"
 #include "formateur.h"
+#include "statadem.h"
 #include <QMainWindow>
+#include <QRegExpValidator>
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
@@ -101,6 +103,10 @@ private slots:
 
     void on_genere_liste_formateur_clicked();
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     etudiant tempEtudiant;
@@ -108,5 +114,6 @@ private:
     fournisseur tempFournisseur;
     matierepremiere tempmatiereprem;
     formateur tempformateur;
+    statadem *stata;
 };
 #endif // MAINWINDOW_H

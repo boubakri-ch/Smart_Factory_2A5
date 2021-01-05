@@ -1,4 +1,4 @@
-QT       += core gui sql printsupport serialport network charts
+QT       += core gui sql printsupport serialport network charts multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,7 +16,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     matierepremiere.cpp \
-    produit.cpp
+    produit.cpp \
+    statadem.cpp
 
 HEADERS += \
     connexion.h \
@@ -25,10 +26,12 @@ HEADERS += \
     fournisseur.h \
     mainwindow.h \
     matierepremiere.h \
-    produit.h
+    produit.h \
+    statadem.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    statadem.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

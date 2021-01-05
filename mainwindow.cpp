@@ -19,6 +19,35 @@
 #include <QItemSelectionModel>
 #include <QModelIndexList>
 #include <QStringList>
+#include<QDate>
+#include<QDateTime>
+#include<QDesktopServices>
+#include<QSqlQuery>
+#include <QMessageBox>
+#include <QTabWidget>
+#include <QString>
+#include <QTextDocument>
+#include <QPainter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrinter>
+#include <QtWidgets>
+#include <QItemSelectionModel>
+#include <QModelIndexList>
+#include <QStringList>
+#include<QPropertyAnimation>
+#include<QEasingCurve>
+#include<QParallelAnimationGroup>
+#include<QGraphicsOpacityEffect>
+#include <QRegExpValidator>
+#include <QSystemTrayIcon>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QSound>
+#include <QtMultimedia>
+#include <QWidget>
+#include <QMediaPlayer>
+#include <QFile>
+#include <QTextStream>
 #ifndef QT_NO_PRINTER
 #include <QPrinter>
 #endif
@@ -730,4 +759,81 @@ void MainWindow::on_genere_liste_formateur_clicked()
                 printer.setOutputFileName("formateur.pdf");
                 document->print(&printer);
                 QDesktopServices::openUrl(QUrl::fromLocalFile("formateur.pdf"));
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    stata=new statadem(this);
+            stata->show();
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    QTableView *table;
+
+                       table = ui->tableView;
+
+
+                       QString filters("Excel Files (.xls)");
+
+                       QString defaultFilter("Excel Files (*.xls)");
+
+                       QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
+
+                                          filters, &defaultFilter);
+
+                       QFile file(fileName);
+
+
+                       QAbstractItemModel *model =  table->model();
+
+                       if (file.open(QFile::WriteOnly | QFile::Truncate)) {
+
+                           QTextStream data(&file);
+
+                           QStringList strList;
+
+                           for (int i = 0; i < model->columnCount(); i++) {
+
+                               if (model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString().length() > 0)
+
+                                   strList.append("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString() + "\"");
+
+                               else
+
+                                   strList.append("");
+
+                           }
+
+                           data << strList.join(";") << "\n";
+
+                           for (int i = 0; i < model->rowCount(); i++) {
+
+                               strList.clear();
+
+                               for (int j = 0; j < model->columnCount(); j++) {
+
+
+                                   if (model->data(model->index(i, j)).toString().length() > 0)
+
+                                       strList.append("\"" + model->data(model->index(i, j)).toString() + "\"");
+
+                                   else
+
+                                       strList.append("");
+
+                               }
+
+                               data << strList.join(";") + "\n";
+
+                           }
+
+                           file.close();
+
+                           QMessageBox::information(nullptr, QObject::tr("Export excel"),
+
+                                                     QObject::tr("Export avec succes .\n"
+
+                                                                 "Click OK to exit."), QMessageBox::Ok);
+       }
 }
