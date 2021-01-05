@@ -1,0 +1,4 @@
+cin du client :123
+nom du client :zz
+cin du client :123
+nom du client :maher
