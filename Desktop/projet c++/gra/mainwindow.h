@@ -2,13 +2,14 @@
 #define MAINWINDOW_H
 #include"fournisseur.h"
 #include"produit.h"
-#include"arduino.h"
+#include<arduino.h>
 #include"statistique.h"
 #include<QSound>
 #include <QRegExpValidator>
 #include <QMainWindow>
 #include <QTcpSocket>
 #include"historique.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -95,5 +96,6 @@ private:
      statistique *stat;
      QTcpSocket*mSocket;
      Historique histo;
+     QString temp="";
 #endif // MAINWINDOW_H
 };

@@ -66,16 +66,40 @@ MainWindow::MainWindow(QWidget *parent)
            {
                ui->plainTextEdit->appendPlainText("pas de connexion");
            }
-           connect(mSocket,SIGNAL(readyRead()),this,SLOT(leer()));
+           int ret=A.connect_arduino();
+                      switch(ret)
+                      {
+                      case(0):qDebug()<<"arduino is available and connected to :"<<A.getarduino_port_name();
+                          break;
+                      case(1):qDebug()<<"arduino is available but not connected to :"<<A.getarduino_port_name();
+                          break;
+                      case(-1):qDebug()<<"arduino is not available";
+                      }
+           connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(leer()));
 }
 void MainWindow::leer()
 {
-    QByteArray buffer;
-    buffer.resize(mSocket->bytesAvailable());
-    mSocket->read(buffer.data(),buffer.size());
-    ui->plainTextEdit->setReadOnly(true);
-    ui->plainTextEdit->appendPlainText(QString(buffer));
-}
+    temp=QString::fromStdString(A.read_from_arduino().toStdString());
+
+
+        int masse=temp.toInt();
+        qDebug()<<"masse="<<masse;
+        QSqlQuery qry;
+        qry.prepare("insert into mass values(sysdate,:masse)");
+        qry.bindValue(":tempe",masse);
+
+        qry.exec();
+
+        ui->ard->setModel(A.afficher());
+        ui->ard->setColumnWidth(0,180);
+        ui->ard->setColumnWidth(1,180);
+
+        ui->ard->setColumnWidth(2,180);
+
+
+    }
+
+
 
 MainWindow::~MainWindow()
 {
