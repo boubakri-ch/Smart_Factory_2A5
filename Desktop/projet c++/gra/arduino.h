@@ -24,6 +24,7 @@ private:
     static const quint16 arduino_uno_producy_id=67;
     QString arduino_port_name;
     bool arduino_is_available;
+    int test;
 
 };
 

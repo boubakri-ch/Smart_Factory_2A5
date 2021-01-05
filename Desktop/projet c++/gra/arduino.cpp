@@ -14,6 +14,8 @@ int arduino::connect_arduino()
         if(serial_port_info.hasVendorIdentifier() && serial_port_info.hasProductIdentifier()){
             if(serial_port_info.vendorIdentifier()==arduino_uno_vendor_id && serial_port_info.productIdentifier()==arduino_uno_producy_id ){
                 arduino_is_available=true;
+                 test=serial_port_info.vendorIdentifier();
+
                 arduino_port_name=serial_port_info.portName();
 
 
@@ -23,6 +25,7 @@ int arduino::connect_arduino()
 
         if(arduino_is_available){
             qDebug()<<"arduino port name is :"<<arduino_port_name;
+            qDebug()<<""<<test;
                 serial->setPortName(arduino_port_name);
              if(serial->open(QSerialPort::ReadWrite))
              {
@@ -66,11 +69,4 @@ int arduino::write_to_arduino(QByteArray d)
         serial->write(d);
     }else qDebug()<<"couldn't write to serial ";
 }
-QSqlQueryModel *  arduino ::afficher()
-{
-    QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("select to_char(DATE_DE_MESURE,'dd/mm/yyyy hh24:mi:ss'),MESURE from mass order by date_mesure desc");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("DATE_DE_Mesure"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("MESURE"));
-    return model;
-}
+

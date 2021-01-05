@@ -20,7 +20,7 @@
 #include<QUrl>
 #include<QFile>
 #include<QTextStream>
-
+#include"arduino.h"
 //git first commit
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -90,14 +90,7 @@ void MainWindow::leer()
 
         qry.exec();
 
-        ui->ard->setModel(A.afficher());
-        ui->ard->setColumnWidth(0,180);
-        ui->ard->setColumnWidth(1,180);
-
-        ui->ard->setColumnWidth(2,180);
-
-
-    }
+}
 
 
 
@@ -649,3 +642,5 @@ void MainWindow::on_pushButton_19_clicked()
         ui->plainTextEdit->appendPlainText(ui->lineEdit_2->text());
         ui->lineEdit_2->clear();
 }
+
+

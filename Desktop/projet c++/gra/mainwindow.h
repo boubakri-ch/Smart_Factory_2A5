@@ -84,6 +84,8 @@ private slots:
     void leer();
     void on_pushButton_19_clicked();
 
+    void on_pushButton_20_clicked();
+
 private:
     Ui::MainWindow *ui;
     FOURNISSEUR tab_four;
